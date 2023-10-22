@@ -1,0 +1,24 @@
+---
+---
+<div id="circle">
+<style>
+ #circle {
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+  height: 3.5em;
+  width: 3.5em;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index:100000000000000000000;
+  mix-blend-mode: difference;
+}
+</style>
+<script>
+  const cursor = document.getElementById("circle");
+
+document.onmousemove = function(e) {
+    cursor.style.top = e.pageY + "px";
+  cursor.style.left = e.pageX + "px";
+}
+</script>

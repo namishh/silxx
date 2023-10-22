@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+<Layout title="Silico Battles">
+  <section class="header">
+  </section>
+</Layout>
+<style>
+  .header {
+    clip-path: polygon(0 0, 100% 0%, 100% 91%, 0% 100%);
+    z-index: -1;
+    background: linear-gradient(to top right, #08090b77, #08090baa) ,url('/header.jpg');
+
+    background-size: cover;
+    height: 95vh;
+  }
+</style>
