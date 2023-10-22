@@ -1,6 +1,13 @@
 ---
 ---
-<div class="fixed navbar h-screen w-[100%] z-[1100000]">
+<div class="fixed navbar h-screen w-[100%]  z-[1100000]">
+  <ul class="navbar-list hidden bottom-[5%] md:bottom-[10%] left-[5%] md:left-[5%] transition-all fixed z-[1001] flex flex-col justify-center md:justify-center leading-0 items-start">
+    <li><a href="#" class="navbar-link  font-extrabold md:font-black text-[4.5rem] md:text-[5rem] lg:text-[7rem]">Home</a></li>
+    <li><a href="#" class="navbar-link font-extrabold md:font-black text-[4.5rem] md:text-[5rem] lg:text-[7rem]">Events</a></li>
+    <li><a href="#" class="navbar-link font-extrabold md:font-black text-[4.5rem] md:text-[5rem] lg:text-[7rem]">Team</a></li>
+    <li><a href="#" class="navbar-link font-extrabold md:font-black text-[4.5rem] md:text-[5rem] lg:text-[7rem]">Register</a></li>
+    <li><a href="#" class="navbar-link font-extrabold md:font-black text-[4.5rem] md:text-[5rem] lg:text-[7rem]">Discord</a></li>
+  </ul>
   <div class="navtoggle h-16 w-16 rounded-full absolute sm:top-[2rem] top-[2rem] right-[2rem] sm:right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
     <div class="line h-[3px] rounded-xl w-6 bg-darkbg"></div>
     <div class="line h-[3px] rounded-xl w-4 bg-darkbg"></div>
@@ -10,7 +17,36 @@
 <script>
   const navToggler = document.querySelector('.navtoggle');
   const navExpander = document.querySelector('.navexpand');
+  const navList = document.querySelector('.navbar-list');
   navToggler.addEventListener('click', () => {
     navExpander.classList.toggle('scale-[11000%]')
+    navList.classList.toggle('hidden')
   })
 </script>
+
+<style>
+  .navbar-link {
+    color: transparent;
+    display: inline-block;
+    -webkit-text-stroke: 2px #dcdee6;
+    transition: 0.1s;
+    margin: -1.4rem 0;
+  }
+  @media only screen and (max-width: 960px) {
+  .navbar-link {
+    margin: 0rem 0;
+  }
+}
+  .navbar-link:hover {
+    color: #dcdee6;
+  }
+
+  .navbar-list {
+    transform: translateX(0vw);
+        -webkit-transition-duration: 0.8s;
+
+  }
+  .hidden {
+    transform: translateX(-10vw);
+  }
+</style>
