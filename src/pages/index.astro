@@ -2,16 +2,30 @@
 import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="Silico Battles">
-  <section class="header">
+  <section class="header justify-center z-[] relative items-center flex">
+    <img src="./logo.png" class="absolute top-[1rem] h-24 left-[1rem]">
+    <header class="flex flex-col items-center justify-center mb-4">
+      <h1 class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
+      <h1 class="text-[6.5rem] sm:text-[10rem] -mb-[2rem] sm:-mb-[3rem] -mt-[1.5rem] text-center leading-0 font-extrabold text-darkfg">SILICO</h1>
+      <h1 class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg self-end mr-8 sm:mr-4">BATTLES V20.1</h1>
+      <div class="flex justify-center items-center gap-4 mt-8">
+          <a href="#" class="sm:px-8 px-4 py-4 sm:py-4 rounded-full bg-darksec">REGISTER NOW</a>
+          <a href="#" class="sm:px-8 sm:py-4 py-4 px-4 rounded-full bg-darkfg">GET THE BROCHURE</a>
+      </div>
+    </header>
   </section>
+  <div class="about h-screen "></div>
 </Layout>
 <style>
   .header {
     clip-path: polygon(0 0, 100% 0%, 100% 91%, 0% 100%);
     z-index: -1;
     background: linear-gradient(to top right, #08090b77, #08090baa) ,url('/header.jpg');
-
     background-size: cover;
     height: 95vh;
+  }
+
+  .about {
+      transform: skew(0deg, -2deg);
   }
 </style>

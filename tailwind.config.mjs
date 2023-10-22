@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         'darkbg': "#08090b",
-        'darkmbg': "#140d24",
+        'darkmbg': "#101217",
         'darkfg': "#dcdee6",
         'darkerror': "#b94e5d",
         'darksuccess': "#b5bb7b",

@@ -1,16 +1,16 @@
 ---
 ---
 <div class="fixed navbar h-screen w-[100%] z-[1100000]">
-  <div class="navtoggle h-16 w-16 rounded-full absolute top-[2rem] right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
+  <div class="navtoggle h-16 w-16 rounded-full absolute sm:top-[2rem] top-[2rem] right-[2rem] sm:right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
     <div class="line h-[3px] rounded-xl w-6 bg-darkbg"></div>
     <div class="line h-[3px] rounded-xl w-4 bg-darkbg"></div>
   </div>
-  <div class="navexpand h-12 w-12 rounded-full absolute top-[2.5rem] right-[6rem] transition-all z-[999] bg-darksec flex justify-center items-center"></div>
+  <div class="navexpand h-12 w-12 rounded-full absolute sm:top-[2.3rem] top-[2rem] right-[2rem] sm:right-[6.3rem] transition-all z-[999] bg-darksec flex justify-center items-center"></div>
 </div>
 <script>
   const navToggler = document.querySelector('.navtoggle');
   const navExpander = document.querySelector('.navexpand');
   navToggler.addEventListener('click', () => {
-    navExpander.classList.toggle('scale-[10000%]')
+    navExpander.classList.toggle('scale-[11000%]')
   })
 </script>
