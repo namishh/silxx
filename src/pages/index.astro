@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Card from "../components/Card.astro"
+import Footer from "../components/Footer.astro"
 ---
 <Layout title="Silico Battles">
   <section class="header justify-center z-[] relative items-center flex">
@@ -41,6 +42,10 @@ import Card from "../components/Card.astro"
     </div> 
     <a href="#" class="text-center font-light text-2xl uppercase text-darkfg block my-16">See More</a>
   </div>
+  <div class="twenty-years py-16 px-4 font-black text-3xl sm:text-4xl md:text-6xl text-center text-darkfg uppercase">
+    celebrating 20 years of the silico battles
+  </div>
+  <Footer/>
 </Layout>
 <style>
   .header {
@@ -55,5 +60,12 @@ import Card from "../components/Card.astro"
     background-size: cover;
     background-position: bottom;
   }
+
+  .twenty-years {
+    background: linear-gradient(to top right, #08090b77, #08090baa) ,url('/flowa.jpg');
+    background-size: cover;
+    background-position: bottom;
+  }
+
 
 </style>
