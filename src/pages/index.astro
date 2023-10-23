@@ -4,7 +4,8 @@ import Card from "../components/Card.astro"
 import Footer from "../components/Footer.astro"
 ---
 <Layout title="Silico Battles">
-  <section class="header justify-center z-[] relative items-center flex">
+  <section class="header relative justify-center overflow-hidden z-[] relative items-center flex">
+    <div class="image absolute h-[120vh] w-full left-0 top-0"></div>
     <img src="./logo.png" class="absolute top-[1rem] h-24 left-[1rem]">
     <header class="flex flex-col items-center justify-center mb-4">
       <h1 class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
@@ -51,8 +52,6 @@ import Footer from "../components/Footer.astro"
   .header {
     clip-path: polygon(0 0, 100% 0%, 100% 91%, 0% 100%);
     z-index: -1;
-    background: linear-gradient(to top right, #08090b77, #08090baa) ,url('/header.jpg');
-    background-size: cover;
     height: 95vh;
   }
   .events {
@@ -67,5 +66,19 @@ import Footer from "../components/Footer.astro"
     background-position: bottom;
   }
 
+  .image {
+    z-index: -2;
+    background: linear-gradient(to top right, #08090b77, #08090baa) ,url('/header.jpg');
+    background-size: cover;
+        transform: translateZ(0);
+  }
 
 </style>
+<script>
+  let el = document.querySelector('.image')
+  let speed = 0.8 
+  window.onscroll = () => {
+    const dist = window.pageYOffset - el.offsetTop;
+    el.style.top = (dist * speed + 'px');
+  }
+</script>
