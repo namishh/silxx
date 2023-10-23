@@ -7,7 +7,7 @@ e: string
 
   const { img, e } = Astro.props;
 ---
-<div class="slide h-[95vh] relative rounded-0 md:rounded-xl"><div class="absolute l-0 t-0 w-full h-full bg-gradient-to-r from-[#08090d77] to-[#08090daa]"></div><img class="h-full w-full object-cover" src=`/ev-${img}.jpg`>
+<div class="slide h-[95vh] relative rounded-0 md:rounded-xl"><div class="absolute l-0 t-0 w-full h-full bg-gradient-to-r from-[#08090d77] to-[#08090daa]"></div><img class="h-full w-full object-cover" loading="eager" src=`/ev-${img}.jpg`>
   <div class="absolute etitle uppercase text-white top-1/2 left-1/2 font-extrabold text-6xl text-center">{e}</div>
 </div>
 <style>

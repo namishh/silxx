@@ -11,7 +11,7 @@ import Slide from "../components/Slide.astro"
       <Slide e="cyquest" img="cyquest"/>
       <Slide e="dexterity" img="dexterity"/>
       <Slide e="digital imaging" img="digitalimaging"/>
-      <Slide e="forografia" img="fotografia"/>
+      <Slide e="fotografia" img="fotografia"/>
       <Slide e="quiz" img="quiz"/>
       <Slide e="respawn console" img="rspcon"/>
       <Slide e="respawn pc" img="rsppc"/>
@@ -21,13 +21,18 @@ import Slide from "../components/Slide.astro"
       <Slide e="surprise" img="surprise"/>
   </div>
   <div class="controls absolute sm:top-[2rem] top-[2.2rem] left-[2.2rem] sm:left-[2.3rem]">
-    <button class="prev cursor-pointer p-4 text-2xl text-white">
+    <button class="prev  p-4 text-2xl text-white">
 <i class="ph-light ph-arrow-left"></i>
     </button>
-    <button class="next cursor-pointer p-4 text-2xl text-white">
+    <button class="next  p-4 text-2xl text-white">
 <i class="ph-light ph-arrow-right"></i>
     </button>
   </div>
+  </div>
+  <div class="info my-16 px-4 md:px-12">
+    <h1 class="heading-primary text-center font-extrabold mb-8  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">GUIDELINES</h1>
+    <ul class="rules-list text-darkfg list-disc font-light ml-4 text-xl leading-[3rem]">
+    </ul>
   </div>
   <Footer/>
 </Layout>
@@ -101,7 +106,7 @@ import Slide from "../components/Slide.astro"
     software: 'CyQuest Website',
     rules: [
       "This is an enigmatic cryptic hunt encompassing elements of an Alternate Reality Game (ARG), where every step decides the next.",
-      "The hunt will last for 48 hours from October 1, 2023 to October 2 2023.",
+      "The hunt will last for 24 hours from October 2, 2023 12:00 AM to October 3, 2023 12:00AM",
       "The top 10 teams will qualify for the finals. The finals will be held on the school premises on October 7, 2023.",
       "The usage of internet is allowed during the offline hunt.",
       "More information to be relayed on the discord server."
@@ -281,6 +286,7 @@ import Slide from "../components/Slide.astro"
   },
 ]
 
+const list = document.querySelector(".rules-list")
 const slider = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 const container = document.querySelector(".slides");
@@ -291,12 +297,25 @@ const nextButton = document.querySelector(".next");
 
 let currentIndex = 0;
 
+  const setData = () => {
+    list.innerHTML = ""
+    const obj = events[currentIndex]
+    list.innerHTML += `<li class="uppercase">DOMAIN: <span class="font-bold text-darksec">${obj.classes}</span></li>`
+    list.innerHTML += `<li>TEAMS PER SCHOOL: <span class="font-bold text-darksec"> ${obj.teams}</span></li>`
+    list.innerHTML += `<li>MEMBERS PER TEAM: <span class="font-bold text-darksec">${obj.participants}</span></li>`
+    obj.rules.forEach(i => {
+      let elem = `<li class="event-rule">${i}</li>`
+      list.innerHTML+=elem
+  })
+  }
+
+
 function showSlide(index) {
     const slides = document.querySelector('.slides');
     const totalSlides = document.querySelectorAll('.slide').length;
     currentIndex = (index + totalSlides) % totalSlides;
     const offset = -currentIndex * 100 + '%';
-    slides.style.transform = 'translateX(' + offset + ')';
+  slides.style.transform = 'translateX(' + offset + ')';
 }
 
   function nextSlide() {
@@ -314,19 +333,21 @@ function prevSlide() {
     } else {
       currentIndex = slides.length - 1
     }
-    showSlide(currentIndex);
+  showSlide(currentIndex);
 }
 
   prevButton.addEventListener("click", () => {
     prevSlide()
+  setData()
     console.log(events[currentIndex])
   })
   nextButton.addEventListener("click", () => {
       nextSlide()
+  setData()
     console.log(events[currentIndex])
   })
 
-// Call showSlide() initially to display the first slide
-showSlide(0);
+  showSlide(0);
+  setData()
 </script>
 
