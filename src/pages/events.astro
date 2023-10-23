@@ -20,7 +20,7 @@ import Slide from "../components/Slide.astro"
       <Slide e="sr. programming" img="snrprogramming"/>
       <Slide e="surprise" img="surprise"/>
   </div>
-  <div class="controls absolute sm:top-[4rem] top-[2.2rem] left-[2.2rem] sm:left-[6.3rem]">
+  <div class="controls absolute sm:top-[2rem] top-[2.2rem] left-[2.2rem] sm:left-[2.3rem]">
     <button class="prev cursor-pointer p-4 text-2xl text-white">
 <i class="ph-light ph-arrow-left"></i>
     </button>
@@ -32,24 +32,22 @@ import Slide from "../components/Slide.astro"
   <Footer/>
 </Layout>
 <style is:global>
-  .slider {
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .slides {
-  position: relative;
-  transition: all linear .2s;
-  will-change: transform;
-    transform: translateZ(0);
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-  float: left;
-    transform: translateZ(0);
+    flex: 0 0 100%;
+    text-align: center;
 }
-
 .slide img {
   width: 100%;
   display: block;
@@ -290,84 +288,45 @@ const container = document.querySelector(".slides");
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 
-let current = 0;
-let startX = 0;
-let endX = 0;
 
-let position = 0;
+let currentIndex = 0;
 
-function slideWidth() {
-  let totalWidth = 0;
-  
-  slides.forEach(slide => {
-    slide.style.width = slider.offsetWidth + "px";
-    totalWidth = totalWidth +  slider.offsetWidth;
-  });
-  
-  container.style.width = totalWidth + 'px';
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    currentIndex = (index + totalSlides) % totalSlides;
+    const offset = -currentIndex * 100 + '%';
+    slides.style.transform = 'translateX(' + offset + ')';
 }
 
-function animate() {
-  container.style.transform = `translateX(-${slider.offsetWidth * current}px)`;
-  position = slider.offsetWidth * current;
-  requestAnimationFrame(animate);
+  function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0
+    }
+    showSlide(currentIndex);
 }
 
-function slideFoward() {
-  if (current < slides.length - 1) {
-    current++;
-    requestAnimationFrame(animate);
-  } else {
-    current = 0;
-    requestAnimationFrame(animate);
-  }
+function prevSlide() {
+  if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = slides.length - 1
+    }
+    showSlide(currentIndex);
 }
 
-function slideBack() {
-  if (current > 0) {
-    current = current - 1;
-    requestAnimationFrame(animate);
-  } else {
-    current = slides.length - 1;
-    requestAnimationFrame(animate);
-  }
-}
+  prevButton.addEventListener("click", () => {
+    prevSlide()
+    console.log(events[currentIndex])
+  })
+  nextButton.addEventListener("click", () => {
+      nextSlide()
+    console.log(events[currentIndex])
+  })
 
-// LOAD EVENT
-window.addEventListener("load", slideWidth);
-
-// RESIZE EVENT
-window.addEventListener("resize", slideWidth);
-
-// BUTTON EVENTS
-nextButton.addEventListener("click", event => {
-  slideFoward();
-});
-
-prevButton.addEventListener("click", event => {
-  slideBack();
-  console.log("hi")
-});
-
-// TOUCH EVENTS
-container.addEventListener("pointerdown", event => {
-  event.preventDefault();
-  
-  startX = event.pageX;
-});
-
-
-container.addEventListener("pointerup", event => {
-  event.preventDefault();
-  
-  endX = event.pageX;
-  if (startX - endX > 40) {
-    slideFoward();
-  }
-  if (startX - endX < -40) {
-    slideBack();
-  }
-});
-
+// Call showSlide() initially to display the first slide
+showSlide(0);
 </script>
 
