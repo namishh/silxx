@@ -7,11 +7,20 @@ e: string
 
   const { img, e } = Astro.props;
 ---
-<div class="slide h-[95vh] relative rounded-0 md:rounded-xl"><div class="absolute l-0 t-0 w-full h-full bg-gradient-to-r from-[#08090d77] to-[#08090daa]"></div><img class="h-full w-full object-cover" loading="eager" src=`/ev-${img}.png`>
-  <div class="absolute etitle uppercase text-white top-1/2 left-1/2 font-extrabold text-6xl text-center">{e}</div>
+<div class="slide h-[95vh] overflow-hidden relative rounded-0 md:rounded-xl">
+  <div class="image absolute h-[120vh] w-full left-0 top-0 object-cover"></div>
+  <div class="absolute etitle uppercase text-white top-1/2 left-1/2 font-extrabold text-5xl md:text-6xl text-center">{e}</div>
 </div>
-<style>
+<style define:vars={{img: `url(/ev-${img}.png)`}}>
   .etitle {
     transform: translate(-50%, -50%)
   }
+  .image {
+    z-index: -2;
+    background: linear-gradient(to top right, #08090b77, #08090baa) ,var(--img);
+    background-size: cover;
+        transform: translateZ(0);
+  }
 </style>
+<script>
+</script>

@@ -1,26 +1,29 @@
 ---
 ---
 <div class="fixed navbar h-screen w-[100%]  z-[1100000] pointer-events-none">
-  <ul class="navbar-list pointer-events-none hidden text-center uppercase   z-[110000]  transition-all fixed z-[1000] flex flex-col gap-5 justify-center md:justify-center leading-0 items-center">
+  <ul class="navbar-list pointer-events-none  text-center uppercase   z-[110000]   fixed z-[1000] ">
+    <ul class="flex asdf abc opacity-0 flex-col gap-5 justify-center md:justify-center leading-0 items-center transition-all duration-[750ms]">
     <li><a href="/" class="navbar-link pointer-events-auto  font-extrabold  text-[3rem] md:text-[4rem] lg:text-[5rem]">Home</a></li>
     <li><a href="/events" class="navbar-link font-extrabold pointer-events-auto  text-[3rem] md:text-[4rem] lg:text-[5rem]">Events</a></li>
     <li><a href="/team" class="navbar-link font-extrabold pointer-events-auto  text-[3rem] md:text-[4rem] lg:text-[5rem]">Team</a></li>
     <li><a href="#" class="navbar-link font-extrabold pointer-events-auto text-[3rem] md:text-[4rem] lg:text-[5rem]">Register</a></li>
     <li><a href="#" class="navbar-link font-extrabold pointer-events-auto  text-[3rem] md:text-[4rem] lg:text-[5rem]">Discord</a></li>
+    </ul>
   </ul>
   <div class="navtoggle pointer-events-auto h-16 w-16 rounded-full absolute sm:top-[2rem] top-[2rem] right-[2rem] sm:right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
     <div class="line h-[3px] rounded-xl w-6 bg-darkbg"></div>
     <div class="line h-[3px] rounded-xl w-4 bg-darkbg"></div>
   </div>
-  <div class="navexpand h-12 w-12 rounded-full absolute sm:top-[2.3rem] top-[2.2rem] right-[2.2rem] sm:right-[6.3rem] transition-all z-[999] bg-darksec flex justify-center items-center transition-duration-350"></div>
+  <div class="navexpand h-12 w-12 rounded-full absolute sm:top-[2.3rem] top-[2.2rem] right-[2.2rem] sm:right-[6.3rem] transition-all z-[999] bg-darksec flex justify-center items-center duration-[750ms]"></div>
 </div>
 <script>
   const navToggler = document.querySelector('.navtoggle');
   const navExpander = document.querySelector('.navexpand');
-  const navList = document.querySelector('.navbar-list');
+  const navList = document.querySelector('.abc');
   navToggler.addEventListener('click', () => {
     navExpander.classList.toggle('scale-[11000%]')
-    navList.classList.toggle('hidden')
+    navList.classList.toggle('opacity-0')
+    navList.classList.toggle('asdf')
   })
 </script>
 
@@ -44,13 +47,11 @@
   }
 
   .navbar-list {
-    transform: translateX(0vw);
-        -webkit-transition-duration: 0.8s;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
   }
-  .hidden {
-    transform: translateX(-10vw);
+  .asdf {
+    transform: translateX(540px);
   }
 </style>
