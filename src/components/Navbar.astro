@@ -3,14 +3,15 @@
 <div class="fixed navbar h-screen w-[100%]  z-[1100000] pointer-events-none">
   <ul class="navbar-list pointer-events-none  text-center uppercase   z-[110000]   fixed z-[1000] ">
     <ul class="flex asdf abc opacity-0 flex-col gap-5 justify-center md:justify-center leading-0 items-center transition-all duration-[750ms]">
-    <li><a href="/" class="navbar-link pointer-events-auto  font-black  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Home</a></li>
-    <li><a href="/events" class="navbar-link font-black pointer-events-auto  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Events</a></li>
-    <li><a href="/team" class="navbar-link font-black pointer-events-auto  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Team</a></li>
-    <li><a href="#" class="navbar-link font-black pointer-events-auto text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Register</a></li>
-    <li><a href="#" class="navbar-link font-black pointer-events-auto  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Discord</a></li>
+    <li><a href="/" class="navbar-link makebig  font-black  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Home</a></li>
+
+    <li><a href="/events" class="navbar-link font-black makebig  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Events</a></li>
+    <li><a href="/team" class="navbar-link font-black makebig  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Team</a></li>
+    <li><a href="#" class="navbar-link font-black makebig  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Register</a></li>
+    <li><a href="#" class="navbar-link font-black makebig  text-[3.3rem] md:text-[4rem] lg:text-[5rem]">Discord</a></li>
     </ul>
   </ul>
-  <div class="navtoggle pointer-events-auto h-16 w-16 rounded-full absolute sm:top-[2rem] top-[2rem] right-[2rem] sm:right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
+  <div class="navtoggle makebig pointer-events-auto h-16 w-16 rounded-full absolute sm:top-[2rem] top-[2rem] right-[2rem] sm:right-[6rem]  shadow-xl z-[1000] bg-darkfg flex flex-col gap-2 justify-center items-center">
     <div class="line h-[3px] rounded-xl w-6 bg-darkbg"></div>
     <div class="line h-[3px] rounded-xl w-4 bg-darkbg"></div>
   </div>
@@ -20,10 +21,14 @@
   const navToggler = document.querySelector('.navtoggle');
   const navExpander = document.querySelector('.navexpand');
   const navList = document.querySelector('.abc');
+  const links = document.querySelectorAll(".navbar-link")
   navToggler.addEventListener('click', () => {
     navExpander.classList.toggle('scale-[11000%]')
     navList.classList.toggle('opacity-0')
     navList.classList.toggle('asdf')
+    links.forEach(e => {
+      e.classList.toggle("pointer-events-auto")
+    })
   })
 </script>
 
@@ -53,5 +58,6 @@
   }
   .asdf {
     transform: translateX(540px);
+    pointer-events: none;
   }
 </style>

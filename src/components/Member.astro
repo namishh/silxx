@@ -1,0 +1,30 @@
+---
+interface Props {
+firstname: string
+lastname: string
+quote: string 
+id: string
+role: string
+pfp: string
+} 
+
+
+const {firstname, lastname, quote, id, role, pfp} = Astro.props;
+---
+<div data-aos="fade-up" class="card rounded-xl  relative overflow-hidden group flex justify-center items-center  w-full sm:w-[26rem] h-[30rem] bg-darkmbg p-8 py-12">
+  <div class="insta absolute rounded-t-xl transition-all translate-y-full p-4 group-hover:translate-y-0  py-16 bottom-0 left-0 z-[12]  bg-darksec w-full">
+    <div class="text-black flex gap-4">
+      <i class="ph-fill ph-instagram-logo text-4xl"></i>
+      <p class="text-3xl font-light">@{id}</p>
+    </div>
+  </div>
+  <div class="content group-hover:opacity-70 transition-all flex-col flex justify-center items-center">
+    <img src=`/${pfp}` alt="" class="pfp rounded-full h-36 border-[4px] border-solid border-darkfg">
+        <p class="name firstname text-center font-bold text-2xl mt-4 text-white">{firstname + " "} <span class="font-light">{lastname}</span></p>
+        <p class="name firstname text-center font-light text-xl mt-2 text-white">{role}</p>
+        <p class="italic relative  text-darkfg my-8 text-center">{quote}<span class="absolute bottom-[-4rem] right-0 text-6xl opacity-30">
+<i class="ph-fill ph-quotes"></i>
+    </span></p>
+  </div>
+</div>
+

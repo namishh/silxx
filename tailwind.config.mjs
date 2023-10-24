@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    config: {
+    variants: {
+      extend: {
+        translate: ['group-hover', 'hover'],
+      },
+    },
+    },
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {

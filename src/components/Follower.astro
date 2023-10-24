@@ -20,9 +20,24 @@
 
   document.onmousemove = function(e) {
     const mouseY = e.clientY;
-  const mouseX = e.clientX;
+    const mouseX = e.clientX;
+    const interactable = e.target.closest(".makebig")
+    let interacting = interactable !== null;
+    let keyframes = {}
+    if (interacting) {
+      keyframes = {
+        transform:  `translate3d(${mouseX}px, ${mouseY}px, 0) scale(1.5)`
+      }
+    } else {
+      keyframes = {
+      transform:  `translate3d(${mouseX}px, ${mouseY}px, 0)`
+      } 
+    }
+  cursor.animate(keyframes, {
+    duration: 50,
+    fill: "forwards"
+  });
 
-  cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
 }
 </script>
