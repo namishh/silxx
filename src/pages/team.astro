@@ -2,4 +2,29 @@
 import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="The Team | Silico Battles">
+  <section class="header relative justify-center overflow-hidden z-[] relative items-center flex">
+    <div class="image absolute h-[120vh] w-full left-0 top-0"></div>
+  </section>
 </Layout>
+<style>
+  .header {
+    z-index: -1;
+    height: 95vh;
+  }
+
+  .image {
+    z-index: -2;
+    background: linear-gradient(to top right, #08090bdd, #08090bee) ,url('/header3.png');
+    background-size: cover;
+    transform: translateZ(0);
+  }
+
+</style>
+<script>
+  let el = document.querySelector('.image')
+  let speed = 0.8 
+  window.onscroll = () => {
+    const dist = window.pageYOffset - el.offsetTop;
+    el.style.top = (dist * speed + 'px');
+  }
+</script>
