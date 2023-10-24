@@ -9,7 +9,7 @@ e: string
 ---
 <div class="slide h-[95vh] overflow-hidden relative rounded-0 md:rounded-xl">
   <div class="image absolute h-[120vh] w-full left-0 top-0 object-cover"></div>
-  <div class="absolute etitle uppercase text-white top-1/2 left-1/2 font-extrabold text-5xl md:text-6xl text-center">{e}</div>
+  <div class="absolute etitle uppercase text-white top-1/2 left-1/2 font-extrabold text-[2.8rem] break-words md:text-6xl text-center">{e}</div>
 </div>
 <style define:vars={{img: `url(/ev-${img}.png)`}}>
   .etitle {
@@ -19,7 +19,8 @@ e: string
     z-index: -2;
     background: linear-gradient(to top right, #08090b77, #08090baa) ,var(--img);
     background-size: cover;
-        transform: translateZ(0);
+    transform: translateZ(0);
+    background-position: center;
   }
 </style>
 <script>

@@ -4,12 +4,13 @@
   text: string;
   name: string;
   pic: string;
+  delay: string;
 }
 
-const { icon, text,name, pic } = Astro.props;
+const { icon, text,name, pic, delay } = Astro.props;
 ---
 
-<div style=`background: linear-gradient(to bottom, #08090bdd, #08090b77, #08090bbb), url('/${pic}'); background-size: cover;` class="p-4 card rounded-xl h-[35rem] flex flex-col w-full sm:w-2/3 md:w-[26rem] lg:w-1/4 justify-between items-center overflow-hidden shadow-2xl">
+<div data-aos="fade-up"      data-aos-delay={delay} style=`background: linear-gradient(to bottom, #08090bdd, #08090b77, #08090bbb), url('/${pic}'); background-size: cover;` class="p-4 card rounded-xl h-[35rem] flex flex-col w-full sm:w-2/3 md:w-[26rem] lg:w-1/4 justify-between items-center overflow-hidden shadow-2xl">
   <div class="flex justify-between w-full items-center">
     <p class="font-extrabold text-darkfg text-4xl uppercase">{name}</p>
     <i class=`ph-light ph-${icon} text-5xl text-transparent bg-clip-text bg-gradient-to-r from-darkpr to-darksec`></i>

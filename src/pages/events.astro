@@ -4,7 +4,12 @@ import Footer from "../components/Footer.astro"
 import Slide from "../components/Slide.astro"
 ---
 <Layout title="Events | Silico Battles">
-  <div class="slider">
+  <div class="immagoup fixed w-screen h-screen p-8 bg-darksec flex justify-center items-center z-[10000000000000000000000000] top-0 left-0 pointer-events-all">
+    <div class="">
+      <h1 data-aos="fade-up" class="text-[3rem] md:text-6xl font-extrabold text-center">The <span data-aos="fade-up" data-aos-delay="200">Events</span></h1>
+    </div>
+  </div>
+  <div data-aos="slide-left" data-aos-delay="1800"  data-aos-duration="500" class="slider">
   <div class="slides">
     <Slide e="24 frames" img="24frames"/>
       <Slide e="bassface" img="bassface"/>
@@ -30,7 +35,7 @@ import Slide from "../components/Slide.astro"
   </div>
   </div>
   <div class="info my-16 px-4 md:px-12">
-    <h1 class="heading-primary text-center font-extrabold mb-8  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">GUIDELINES</h1>
+    <h1  class="heading-primary text-center font-extrabold mb-8  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">GUIDELINES</h1>
     <ul class="rules-list text-darkfg list-disc font-light ml-4 text-xl leading-[3rem]">
     </ul>
   </div>
@@ -300,11 +305,11 @@ let currentIndex = 0;
   const setData = () => {
     list.innerHTML = ""
     const obj = events[currentIndex]
-    list.innerHTML += `<li class="uppercase">DOMAIN: <span class="font-bold text-darksec">${obj.classes}</span></li>`
-    list.innerHTML += `<li>TEAMS PER SCHOOL: <span class="font-bold text-darksec"> ${obj.teams}</span></li>`
-    list.innerHTML += `<li>MEMBERS PER TEAM: <span class="font-bold text-darksec">${obj.participants}</span></li>`
+    list.innerHTML += `<li data-aos="fade" class="uppercase">DOMAIN: <span class="font-bold text-darksec">${obj.classes}</span></li>`
+    list.innerHTML += `<li data-aos="fade">TEAMS PER SCHOOL: <span class="font-bold text-darksec"> ${obj.teams}</span></li>`
+    list.innerHTML += `<li data-aos="fade">MEMBERS PER TEAM: <span class="font-bold text-darksec">${obj.participants}</span></li>`
     obj.rules.forEach(i => {
-      let elem = `<li class="event-rule">${i}</li>`
+      let elem = `<li data-aos="fade" class="event-rule">${i}</li>`
       list.innerHTML+=elem
   })
   }

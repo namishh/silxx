@@ -4,46 +4,51 @@ import Card from "../components/Card.astro"
 import Footer from "../components/Footer.astro"
 ---
 <Layout title="Silico Battles">
+  <div class="immagoup fixed w-screen h-screen p-8 bg-darksec flex justify-center items-center z-[10000000000000000000000000] top-0 left-0 pointer-events-all">
+    <div class="">
+      <h1 data-aos="fade-up" class="text-[3rem] md:text-6xl font-extrabold text-center">Gear Up <span data-aos="fade-up" data-aos-delay="200">Astronaut</span></h1>
+    </div>
+  </div>
   <section class="header relative justify-center overflow-hidden z-[] relative items-center flex">
     <div class="image absolute h-[120vh] w-full left-0 top-0"></div>
     <img src="./logo.png" class="absolute top-[2rem] h-[4rem] left-[2rem]">
     <header class="flex flex-col items-center justify-center mb-4">
-      <h1 class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
-      <h1 class="text-[6.5rem] sm:text-[10rem] -mb-[2rem] sm:-mb-[3rem] -mt-[1.5rem] text-center leading-0 font-extrabold text-darkfg">SILICO</h1>
-      <h1 class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg self-end mr-8 sm:mr-4">BATTLES V20.1</h1>
+      <h1 data-aos="fade-left" data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
+      <h1 data-aos="fade-right" data-aos-delay="2000" class="text-[6.5rem] sm:text-[10rem] -mb-[2rem] sm:-mb-[3rem] -mt-[1.5rem] text-center leading-0 font-extrabold text-darkfg">SILICO</h1>
+      <h1 data-aos="fade" data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg self-end mr-8 sm:mr-4">BATTLES V20.1</h1>
       <div class="flex justify-center items-center gap-4 mt-8">
-          <a href="#" class="sm:px-8 px-4 py-4 sm:py-4 rounded-full bg-darksec">REGISTER NOW</a>
-          <a href="#" class="sm:px-8 sm:py-4 py-4 px-4 rounded-full bg-darkfg">GET THE BROCHURE</a>
+          <a data-aos="fade-up" data-aos-delay="2300" href="#" class="sm:px-8 px-4 py-4 sm:py-4 rounded-full bg-darksec">REGISTER NOW</a>
+          <a data-aos="fade-up" data-aos-delay="2600" href="#" class="sm:px-8 sm:py-4 py-4 px-4 rounded-full bg-darkfg">GET THE BROCHURE</a>
       </div>
     </header>
   </section>
-  <div class="about mt-16 p-4">
-    <h1 class="heading-primary text-center font-extrabold  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">WE ARE BACK</h1>
+  <div data-aos="fade-up" class="about mt-16 p-4">
+    <h1 data-aos="zoom-in" class="heading-primary text-center font-extrabold  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">WE ARE BACK</h1>
     <div class="flex flex-wrap justify-center gap-6 sm:gap-16 my-16 ">
-      <div class="card p-8 rounded-lg bg-darkmbg flex items-center flex-col w-full sm:w-1/3 md:w-1/4">
+      <div data-aos="fade-right" class="card p-8 rounded-lg bg-darkmbg flex items-center flex-col w-full sm:w-1/3 md:w-1/4">
         <p class="number font-extrabold text-darkfg text-6xl">400+</p> 
         <p class="number font-light text-darkfg text-2xl">Participants</p> 
       </div>
-      <div class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
+      <div data-aos="fade-up" class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
         <p class="number font-extrabold text-darkfg text-6xl">10+</p> 
         <p class="number font-light text-darkfg text-2xl">Events</p> 
       </div>
-      <div class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
+      <div data-aos="fade-left" class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
         <p class="number font-extrabold text-darkfg text-6xl">1</p> 
         <p class="number font-light text-darkfg text-2xl">Winner</p> 
       </div>
     </div>  
   </div>
-  <div class="events p-4 min-h-[60vh] w-full">
+  <div data-aos="fade-right" data-aos-offset="350" class="events p-4 min-h-[60vh] w-full">
     <h1 class="heading-primary text-center font-extrabold text-transparent text-4xl md:text-5xl my-12 bg-clip-text bg-gradient-to-r from-darkpr to-darksec">EVENTS FOR EVERYONE</h1>
     <div class="cards flex w-full justify-center gap-16 flex-wrap">
-        <Card pic="pr.png" icon="laptop" text="Old Fashioned Hackathon" name="Dexterity"/>
-        <Card pic="mp.png" icon="vinyl-record" text="Music Production" name="bassface"/>
-        <Card pic="ve.png" icon="film-slate" text="Video Editing" name="24 frames"/>
+      <Card delay="300" pic="pr.png" icon="laptop" text="Old Fashioned Hackathon" name="Dexterity"/>
+        <Card delay="600" pic="mp.png" icon="vinyl-record" text="Music Production" name="bassface"/>
+        <Card delay="900" pic="ve.png" icon="film-slate" text="Video Editing" name="24 frames"/>
     </div> 
-    <a href="/events" class="text-center font-light text-2xl uppercase text-darkfg block my-16">See More</a>
+    <a data-aos="fade" data-aos-delay="960" href="/events" class="text-center font-light text-2xl uppercase text-darkfg block my-16">See More</a>
   </div>
-  <div class="twenty-years py-16 px-4 font-black text-3xl sm:text-4xl md:text-6xl text-center text-darkfg uppercase">
+  <div data-aos="fade" class="twenty-years py-16 px-4 font-black text-3xl sm:text-4xl md:text-6xl text-center text-darkfg uppercase">
     celebrating 20 years of the silico battles
   </div>
   <Footer/>
@@ -72,11 +77,10 @@ import Footer from "../components/Footer.astro"
     background-size: cover;
         transform: translateZ(0);
   }
-
 </style>
 <script>
   let el = document.querySelector('.image')
-  let speed = 0.8 
+  let speed = 0.4 
   window.onscroll = () => {
     const dist = window.pageYOffset - el.offsetTop;
     el.style.top = (dist * speed + 'px');
