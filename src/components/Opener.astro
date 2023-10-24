@@ -1,0 +1,14 @@
+---
+interface Props {
+str: string
+late: string
+} 
+
+
+const { str, late} = Astro.props;
+---
+<div class="immagoup fixed w-screen h-screen p-8 bg-darksec flex justify-center items-center z-[10000000000000000000000000] top-0 left-0 pointer-events-all">
+    <div class="">
+      <h1 data-aos="fade-up" class="text-[3rem] md:text-6xl font-extrabold text-center">{str} <span data-aos="fade-up" data-aos-delay="200">{" " + late}</span></h1>
+    </div>
+</div>

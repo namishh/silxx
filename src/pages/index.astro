@@ -2,13 +2,10 @@
 import Layout from "../layouts/Layout.astro"
 import Card from "../components/Card.astro"
 import Footer from "../components/Footer.astro"
+import Opener from "../components/Opener.astro"
 ---
 <Layout title="Silico Battles">
-  <div class="immagoup fixed w-screen h-screen p-8 bg-darksec flex justify-center items-center z-[10000000000000000000000000] top-0 left-0 pointer-events-all">
-    <div class="">
-      <h1 data-aos="fade-up" class="text-[3rem] md:text-6xl font-extrabold text-center">Gear Up <span data-aos="fade-up" data-aos-delay="200">Astronaut</span></h1>
-    </div>
-  </div>
+  <Opener str="Gear Up," late="Astronaut"/>
   <section class="header relative justify-center overflow-hidden z-[] relative items-center flex">
     <div class="image absolute h-[120vh] w-full left-0 top-0"></div>
     <img src="./logo.png" class="absolute top-[2rem] h-[4rem] left-[2rem]">

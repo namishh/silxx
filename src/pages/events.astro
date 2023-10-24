@@ -2,13 +2,10 @@
 import Layout from "../layouts/Layout.astro"
 import Footer from "../components/Footer.astro"
 import Slide from "../components/Slide.astro"
+import Opener from "../components/Opener.astro"
 ---
 <Layout title="Events | Silico Battles">
-  <div class="immagoup fixed w-screen h-screen p-8 bg-darksec flex justify-center items-center z-[10000000000000000000000000] top-0 left-0 pointer-events-all">
-    <div class="">
-      <h1 data-aos="fade-up" class="text-[3rem] md:text-6xl font-extrabold text-center">The <span data-aos="fade-up" data-aos-delay="200">Events</span></h1>
-    </div>
-  </div>
+  <Opener str="The" late="Events"/>
   <div data-aos="slide-left" data-aos-delay="1800"  data-aos-duration="500" class="slider">
   <div class="slides">
     <Slide e="24 frames" img="24frames"/>
