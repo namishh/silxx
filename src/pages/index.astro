@@ -8,21 +8,21 @@ import Opener from "../components/Opener.astro"
   <Opener str="Gear Up," late="Astronaut"/>
   <section class="header relative justify-center overflow-hidden z-[] relative items-center flex">
     <div class="image absolute h-[120vh] w-full left-0 top-0"></div>
-    <img src="./logo.png" class="absolute top-[2rem] h-[4rem] left-[2rem]">
+    <img src="./logo.png" class="absolute top-[2rem] h-16 left-[2rem]">
     <header class="flex flex-col items-center justify-center mb-4">
-      <h1 data-aos="fade-left" data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
-      <h1 data-aos="fade-right" data-aos-delay="2000" class="text-[6.5rem] sm:text-[10rem] -mb-[2rem] sm:-mb-[3rem] -mt-[1.5rem] text-center leading-0 font-extrabold text-darkfg">SILICO</h1>
-      <h1 data-aos="fade" data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg self-end mr-8 sm:mr-4">BATTLES V20.1</h1>
+      <h1 data-aos="fade-left"  data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg">TO GLITCH IS A MACHINE, TO ERR A HUMAN</h1>
+      <h1 data-aos="fade-right"  data-aos-delay="2000" class="text-[6.5rem] sm:text-[10rem] -mb-[2rem] sm:-mb-[3rem] -mt-[1.5rem] text-center leading-0 font-extrabold text-darkfg">SILICO</h1>
+      <h1 data-aos="fade-left"  data-aos-delay="2000" class="text-[0.9rem] sm:text-[1.4rem] text-right font-light text-darkfg self-end mr-8 sm:mr-4">BATTLES V20.1</h1>
       <div class="flex justify-center items-center gap-4 mt-8">
-          <a data-aos="fade-up" data-aos-delay="2300" href="#" class="makebig sm:px-8 px-4 py-4 sm:py-4 rounded-full bg-darksec">REGISTER NOW</a>
-          <a data-aos="fade-up" data-aos-delay="2600" href="#" class="sm:px-8 makebig sm:py-4 py-4 px-4 rounded-full bg-darkfg">GET THE BROCHURE</a>
+          <a data-aos="fade-up" data-aos-delay="2300"href="#" class="sm:px-8 px-4 py-4 sm:py-4 rounded-full bg-darksec">REGISTER NOW</a>
+          <a data-aos="fade-up" data-aos-delay="2600"href="#" class="sm:px-8 sm:py-4 py-4 px-4 rounded-full bg-darkfg">GET THE BROCHURE</a>
       </div>
     </header>
   </section>
   <div data-aos="fade-up" class="about mt-16 p-4">
     <h1 data-aos="zoom-in" class="heading-primary text-center font-extrabold  text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-darkpr to-darksec">WE ARE BACK</h1>
     <div class="flex flex-wrap justify-center gap-6 sm:gap-16 my-16 ">
-      <div data-aos="fade-right" class="card p-8 rounded-lg bg-darkmbg flex items-center flex-col w-full sm:w-1/3 md:w-1/4">
+      <div data-aos="fade-up" class="card p-8 rounded-lg bg-darkmbg flex items-center flex-col w-full sm:w-1/3 md:w-1/4">
         <p class="number font-extrabold text-darkfg text-6xl">400+</p> 
         <p class="number font-light text-darkfg text-2xl">Participants</p> 
       </div>
@@ -30,7 +30,7 @@ import Opener from "../components/Opener.astro"
         <p class="number font-extrabold text-darkfg text-6xl">10+</p> 
         <p class="number font-light text-darkfg text-2xl">Events</p> 
       </div>
-      <div data-aos="fade-left" class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
+      <div data-aos="fade-up" class="card p-8 bg-darkmbg flex items-center flex-col w-full sm:w-1/4 sm:w-1/3 md:w-1/4">
         <p class="number font-extrabold text-darkfg text-6xl">1</p> 
         <p class="number font-light text-darkfg text-2xl">Winner</p> 
       </div>
@@ -74,10 +74,11 @@ import Opener from "../components/Opener.astro"
     background-size: cover;
         transform: translateZ(0);
   }
+
 </style>
 <script>
   let el = document.querySelector('.image')
-  let speed = 0.4 
+  let speed = 0.8 
   window.onscroll = () => {
     const dist = window.pageYOffset - el.offsetTop;
     el.style.top = (dist * speed + 'px');
